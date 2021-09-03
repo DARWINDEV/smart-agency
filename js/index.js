@@ -1,32 +1,27 @@
 // scrollspy
 
 $('body').scrollspy({target: 'menu-navegacion'});
+$('body').scrollspy({target: 'footer'});
 
 //scroll suavizado
 
-$('#menu-navegacion a').on('click', function(event){
-    if(this.has != ""){
-        event.preventDefault();
+let classParam;
 
-        const hash = this.hash;
+let scroll = (classParam) => {
+    return $(classParam).on('click', function(event){
+        if(this.has != ""){
+            event.preventDefault();
+    
+            const hash = this.hash;
+    
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function(){
+                window.location.hash = hash;
+            })
+        }
+    });
+}
 
-        $('html, body').animate({
-            scrollTop: $(hash).offset().top
-        }, 800, function(){
-            window.location.hash = hash;
-        })
-    }
-});
-$('#footer a').on('click', function(event){
-    if(this.has != ""){
-        event.preventDefault();
-
-        const hash = this.hash;
-
-        $('html, body').animate({
-            scrollTop: $(hash).offset().top
-        }, 800, function(){
-            window.location.hash = hash;
-        })
-    }
-});
+scroll('#menu-navegacion a');
+scroll('#footer a');

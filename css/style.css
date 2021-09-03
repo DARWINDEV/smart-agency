@@ -155,7 +155,7 @@ a:hover{
     position: absolute;
     bottom: 25px;
     left: 25px;
-    z-index: 9000;
+    z-index: 1000;
 }
 
 .portfolio-details a h2, .portfolio-details a p{
@@ -164,6 +164,7 @@ a:hover{
 
 .portfolio-details h2{
     margin-bottom: 0;
+    overflow: hidden;
 }
 
 /* Miembros */
@@ -350,6 +351,19 @@ a ion-icon{
         font-size: 32px;
     }
 
+    .member-container{
+        position: relative;
+        margin: .7rem 0;
+    }
+
+    .member-container h5{
+        font-size: 1.2rem;
+    }
+
+    .member-container span{
+        line-height: 2.6;
+    }
+
     .plans{
         min-width: unset;
         padding: 38px;
@@ -367,9 +381,13 @@ a ion-icon{
         font-size: 18px;
     }
 
-    /* #contact h3, p{
+    .carousel-container{
         text-align: center;
-    } */
+    }
+
+    .testimonio-user{
+        text-align: center;
+    }
 
 }
 
